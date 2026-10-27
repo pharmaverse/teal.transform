@@ -11,7 +11,8 @@ Authors@R: c(
     person("Maciej", "Nasinski", role = "aut"),
     person("Konrad", "Pagacz", role = "aut"),
     person("Junlue", "Zhao", role = "aut"),
-    person("F. Hoffmann-La Roche AG", role = c("cph", "fnd"))
+    person("F. Hoffmann-La Roche AG", role = c("cph", "fnd")),
+    person("Appsilon Sp. z o.o.", email = "teal@appsilon.com", role = c("cph", "fnd"))
   )
 Description: A standardized user interface for column selection, that
     facilitates dataset merging in 'teal' framework.

@@ -1,3 +1,10 @@
+# teal.transform 0.7.2.9000
+
+### Miscellaneous
+
+* teal.transform has moved to the pharmaverse GitHub organisation: https://github.com/pharmaverse/teal.transform.
+* Appsilon becomes a core contributor and joins F. Hoffmann-La Roche AG as a copyright holder of teal.transform, working alongside the wider contributor community.
+
 # teal.transform 0.7.2
 
 ### Miscellaneous
