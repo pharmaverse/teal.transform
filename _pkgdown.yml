@@ -1,5 +1,5 @@
 ---
-url: https://insightsengineering.github.io/teal.transform
+url: https://pharmaverse.github.io/teal.transform
 
 template:
   package: nesttemplate
@@ -20,7 +20,7 @@ navbar:
         href: unit-test-report-non-cran/
     github:
       icon: fa-github
-      href: https://github.com/insightsengineering/teal.transform
+      href: https://github.com/pharmaverse/teal.transform
 
 reference:
   - title: Data extract constructors

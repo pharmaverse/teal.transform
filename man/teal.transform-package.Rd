@@ -11,9 +11,9 @@ A standardized user interface for column selection, that facilitates dataset mer
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://insightsengineering.github.io/teal.transform/}
-  \item \url{https://github.com/insightsengineering/teal.transform/}
-  \item Report bugs at \url{https://github.com/insightsengineering/teal.transform/issues}
+  \item \url{https://pharmaverse.github.io/teal.transform/}
+  \item \url{https://github.com/pharmaverse/teal.transform/}
+  \item Report bugs at \url{https://github.com/pharmaverse/teal.transform/issues}
 }
 
 }

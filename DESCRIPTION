@@ -16,9 +16,9 @@ Authors@R: c(
 Description: A standardized user interface for column selection, that
     facilitates dataset merging in 'teal' framework.
 License: Apache License 2.0
-URL: https://insightsengineering.github.io/teal.transform/,
-    https://github.com/insightsengineering/teal.transform/
-BugReports: https://github.com/insightsengineering/teal.transform/issues
+URL: https://pharmaverse.github.io/teal.transform/,
+    https://github.com/pharmaverse/teal.transform/
+BugReports: https://github.com/pharmaverse/teal.transform/issues
 Depends:
     R (>= 3.6)
 Imports:
@@ -50,8 +50,8 @@ VignetteBuilder:
     rmarkdown
 Config/Needs/verdepcheck: mllg/checkmate, tidyverse/dplyr,
     daroczig/logger, r-lib/rlang, rstudio/shiny, daattali/shinyjs,
-    rstudio/shinyvalidate, insightsengineering/teal.data,
-    insightsengineering/teal.logger, insightsengineering/teal.widgets,
+    rstudio/shinyvalidate, pharmaverse/teal.data,
+    pharmaverse/teal.logger, pharmaverse/teal.widgets,
     tidyverse/tidyr, r-lib/tidyselect, yihui/knitr, rstudio/rmarkdown,
     r-lib/testthat, r-lib/withr
 Config/Needs/website: insightsengineering/nesttemplate
