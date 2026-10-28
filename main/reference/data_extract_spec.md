@@ -21,7 +21,7 @@ data_extract_spec(dataname, select = NULL, filter = NULL, reshape = FALSE)
   (`NULL` or `select_spec`-S3 class or `delayed_select_spec`) Columns to
   be selected from the input dataset mentioned in `dataname`. The setup
   can be created using
-  [select_spec](https://insightsengineering.github.io/teal.transform/reference/select_spec.md)
+  [select_spec](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)
   function.
 
 - filter:
@@ -29,7 +29,7 @@ data_extract_spec(dataname, select = NULL, filter = NULL, reshape = FALSE)
   (`NULL` or `filter_spec` or its respective delayed version) Setup of
   the filtering of key columns inside the dataset. This setup can be
   created using the
-  [filter_spec](https://insightsengineering.github.io/teal.transform/reference/filter_spec.md)
+  [filter_spec](https://pharmaverse.github.io/teal.transform/reference/filter_spec.md)
   function. Please note that if both select and filter are set to
   `NULL`, then the result will be a filter spec UI with all variables as
   possible choices and a select spec with multiple set to `TRUE`.
@@ -55,8 +55,8 @@ to by name.
 
 ## References
 
-[select_spec](https://insightsengineering.github.io/teal.transform/reference/select_spec.md)
-[filter_spec](https://insightsengineering.github.io/teal.transform/reference/filter_spec.md)
+[select_spec](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)
+[filter_spec](https://pharmaverse.github.io/teal.transform/reference/filter_spec.md)
 
 ## Examples
 

@@ -21,7 +21,7 @@ data_extract_ui(id, label, data_extract_spec, is_single_dataset = FALSE)
 - data_extract_spec:
 
   (`list` of `data_extract_spec`) This is the outcome of listing
-  [`data_extract_spec()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+  [`data_extract_spec()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
   constructor calls.
 
 - is_single_dataset:
@@ -34,20 +34,21 @@ Shiny
 [`shiny::selectInput`](https://rdrr.io/pkg/shiny/man/selectInput.html)`s`
 that allow to define how to extract data from a specific dataset. The
 input elements will be returned inside a
-[shiny::div](https://rdrr.io/pkg/shiny/man/reexports.html) container.
+[shiny::div](https://rstudio.github.io/htmltools/reference/builder.html)
+container.
 
 ## Details
 
 There are three inputs that will be rendered
 
 1.  Dataset select Optional. If more than one
-    [data_extract_spec](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+    [data_extract_spec](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
     is handed over to the function, a shiny
     [shiny::selectInput](https://rdrr.io/pkg/shiny/man/selectInput.html)
     will be rendered. Else just the name of the dataset is given.
 
 2.  Filter Panel Optional. If the
-    [data_extract_spec](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+    [data_extract_spec](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
     contains a filter element a shiny
     [shiny::selectInput](https://rdrr.io/pkg/shiny/man/selectInput.html)
     will be rendered with the options to filter the dataset.
@@ -60,14 +61,14 @@ The output can be analyzed using `data_extract_srv(...)`.
 
 This functionality should be used in the encoding panel of your `teal`
 app. It will allow app-developers to specify a
-[`data_extract_spec()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+[`data_extract_spec()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
 object. This object should be used to `teal` module variables being
 filtered data from CDISC datasets.
 
 You can use this function in the same way as any
 [`shiny module`](https://shiny.rstudio.com/articles/modules.html) UI.
 The corresponding server module can be found in
-[`data_extract_srv()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_srv.md).
+[`data_extract_srv()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_srv.md).
 
 ## Examples
 
@@ -111,7 +112,7 @@ bslib::layout_sidebar(
 #>     <div class="main bslib-gap-spacing html-fill-container">
 #>       <div id="table" class="shiny-html-output shiny-table-output"></div>
 #>     </div>
-#>     <aside id="bslib-sidebar-2686" class="sidebar" hidden>
+#>     <aside id="bslib-sidebar-6961" class="sidebar" hidden data-resizable>
 #>       <div class="sidebar-content bslib-gap-spacing">
 #>         <div>
 #>           <div>
@@ -208,7 +209,7 @@ bslib::layout_sidebar(
 #>         </div>
 #>       </div>
 #>     </aside>
-#>     <button class="collapse-toggle" type="button" title="Toggle sidebar" aria-expanded="true" aria-controls="bslib-sidebar-2686"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="bi bi-chevron-left collapse-icon" style="height:;width:;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img" ><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path></svg></button>
+#>     <button class="collapse-toggle" type="button" title="Toggle sidebar" aria-expanded="true" aria-controls="bslib-sidebar-6961"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="bi bi-chevron-left collapse-icon" style="height:;width:;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img" ><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path></svg></button>
 #>     <script data-bslib-sidebar-init>bslib.Sidebar.initCollapsibleAll()</script>
 #>   </div>
 #> </div>

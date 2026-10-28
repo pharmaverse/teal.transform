@@ -46,11 +46,11 @@ select_spec.default(
   define the choices of a shiny
   [`shiny::selectInput()`](https://rdrr.io/pkg/shiny/man/selectInput.html).
   These have to be columns in the dataset defined in the
-  [`data_extract_spec()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+  [`data_extract_spec()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
   where this is called. `delayed_data` objects can be created via
-  [`variable_choices()`](https://insightsengineering.github.io/teal.transform/reference/variable_choices.md)
+  [`variable_choices()`](https://pharmaverse.github.io/teal.transform/reference/variable_choices.md)
   or
-  [`value_choices()`](https://insightsengineering.github.io/teal.transform/reference/value_choices.md).
+  [`value_choices()`](https://pharmaverse.github.io/teal.transform/reference/value_choices.md).
 
 - selected:
 
@@ -70,7 +70,7 @@ select_spec.default(
 - fixed:
 
   (`logical`) optional
-  [`data_extract_spec()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+  [`data_extract_spec()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
   specific feature to hide the choices selected in case they are not
   needed. Setting fixed to `TRUE` will not allow the user to select
   columns. It will then lead to a selection of columns in the dataset
@@ -257,7 +257,7 @@ select_spec(
 #>   function(data) {
 #>           fun(original_fun(data))
 #>         }
-#> <environment: 0x55eb793c4180>
+#> <environment: 0x56417ce86750>
 #>   $ key
 #>   NULL
 #> $ multiple

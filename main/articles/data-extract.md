@@ -18,28 +18,27 @@ into how it fulfills both of these responsibilities.
 
 #### Step 1/4 - Preparing the Data
 
-``` r
-library(teal.transform)
-library(teal.data)
-#> Loading required package: teal.code
-library(shiny)
-
-# Define data.frame objects
-ADSL <- teal.data::rADSL
-ADTTE <- teal.data::rADTTE
-
-# create a list of reactive data.frame objects
-datasets <- list(
-  ADSL = reactive(ADSL),
-  ADTTE = reactive(ADTTE)
-)
-# create join_keys
-join_keys <- join_keys(
-  join_key("ADSL", "ADSL", c("STUDYID", "USUBJID")),
-  join_key("ADSL", "ADTTE", c("STUDYID", "USUBJID")),
-  join_key("ADTTE", "ADTTE", c("STUDYID", "USUBJID", "PARAMCD"))
-)
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.transform`](https://pharmaverse.github.io/teal.transform/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.data`](https://insightsengineering.github.io/teal.data/)`)`\
+`#> Loading required package: teal.code`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`shiny`](https://shiny.posit.co/)`)`\
+\
+`# Define data.frame objects`\
+`ADSL`` ``<-`` ``teal.data``::`[`rADSL`](https://rdrr.io/pkg/teal.data/man/random_cdisc_data.html)\
+`ADTTE`` ``<-`` ``teal.data``::`[`rADTTE`](https://rdrr.io/pkg/teal.data/man/random_cdisc_data.html)\
+\
+`# create a list of reactive data.frame objects`\
+`datasets`` ``<-`` `[`list`](https://rdrr.io/r/base/list.html)`(`\
+`  ADSL ``=`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``ADSL``)``,`\
+`  ADTTE ``=`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``ADTTE``)`\
+`)`\
+`# create join_keys`\
+`join_keys`` ``<-`` `[`join_keys`](https://rdrr.io/pkg/teal.data/man/join_keys.html)`(`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"ADSL"``, ``"ADSL"``, `[`c`](https://rdrr.io/r/base/c.html)`(``"STUDYID"``, ``"USUBJID"``)``)``,`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"ADSL"``, ``"ADTTE"``, `[`c`](https://rdrr.io/r/base/c.html)`(``"STUDYID"``, ``"USUBJID"``)``)``,`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"ADTTE"``, ``"ADTTE"``, `[`c`](https://rdrr.io/r/base/c.html)`(``"STUDYID"``, ``"USUBJID"``, ``"PARAMCD"``)``)`\
+`)`
 
 #### Step 2/4 - Creating a `data_extract_spec` Object
 
@@ -49,13 +48,12 @@ select a variable from `c("BMRKR1", "AGE")`. `data_extract_spec` object
 is handed over to the `shiny` app and gives instructions to generate UI
 components.
 
-``` r
-simple_des <- data_extract_spec(
-  dataname = "ADSL",
-  filter = filter_spec(vars = "SEX", choices = c("F", "M")),
-  select = select_spec(choices = c("BMRKR1", "AGE"))
-)
-```
+\
+`simple_des`` ``<-`` `[`data_extract_spec`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)`(`\
+`  dataname ``=`` ``"ADSL"``,`\
+`  filter ``=`` `[`filter_spec`](https://pharmaverse.github.io/teal.transform/reference/filter_spec.md)`(``vars ``=`` ``"SEX"``, choices ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"F"``, ``"M"``)``)``,`\
+`  select ``=`` `[`select_spec`](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)`(``choices ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"BMRKR1"``, ``"AGE"``)``)`\
+`)`
 
 #### Step 3/4 - Creating the `shiny` UI and Server Modules
 
@@ -67,47 +65,45 @@ list of values returned from the `data_extract_srv` module. For more
 information about `data_extract_ui` and `data_extract_srv`, please refer
 to the package documentation.
 
-``` r
-extract_ui <- function(id, data_extract) {
-  ns <- NS(id)
-  sidebarLayout(
-    sidebarPanel(
-      h3("Encoding"),
-      data_extract_ui(ns("data_extract"), label = "variable", data_extract)
-    ),
-    mainPanel(
-      h3("Output"),
-      verbatimTextOutput(ns("output"))
-    )
-  )
-}
-
-extract_srv <- function(id, datasets, data_extract, join_keys) {
-  moduleServer(id, function(input, output, session) {
-    reactive_extract_input <- data_extract_srv("data_extract", datasets, data_extract, join_keys)
-    s <- reactive({
-      format_data_extract(reactive_extract_input())
-    })
-    output$output <- renderPrint({
-      cat(s())
-    })
-  })
-}
-```
+\
+`extract_ui`` ``<-`` ``function``(``id``, ``data_extract``)`` ``{`\
+`  ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
+`  `[`sidebarLayout`](https://rdrr.io/pkg/shiny/man/sidebarLayout.html)`(`\
+`    `[`sidebarPanel`](https://rdrr.io/pkg/shiny/man/sidebarLayout.html)`(`\
+`      `[`h3`](https://rstudio.github.io/htmltools/reference/builder.html)`(``"Encoding"``)``,`\
+`      `[`data_extract_ui`](https://pharmaverse.github.io/teal.transform/reference/data_extract_ui.md)`(``ns``(``"data_extract"``)``, label ``=`` ``"variable"``, ``data_extract``)`\
+`    ``)``,`\
+`    `[`mainPanel`](https://rdrr.io/pkg/shiny/man/sidebarLayout.html)`(`\
+`      `[`h3`](https://rstudio.github.io/htmltools/reference/builder.html)`(``"Output"``)``,`\
+`      `[`verbatimTextOutput`](https://rdrr.io/pkg/shiny/man/textOutput.html)`(``ns``(``"output"``)``)`\
+`    ``)`\
+`  ``)`\
+`}`\
+\
+`extract_srv`` ``<-`` ``function``(``id``, ``datasets``, ``data_extract``, ``join_keys``)`` ``{`\
+`  `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
+`    ``reactive_extract_input`` ``<-`` `[`data_extract_srv`](https://pharmaverse.github.io/teal.transform/reference/data_extract_srv.md)`(``"data_extract"``, ``datasets``, ``data_extract``, ``join_keys``)`\
+`    ``s`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
+`      `[`format_data_extract`](https://pharmaverse.github.io/teal.transform/reference/format_data_extract.md)`(``reactive_extract_input``(``)``)`\
+`    ``}``)`\
+`    ``output``$``output`` ``<-`` `[`renderPrint`](https://rdrr.io/pkg/shiny/man/renderPrint.html)`(``{`\
+`      `[`cat`](https://rdrr.io/r/base/cat.html)`(``s``(``)``)`\
+`    ``}``)`\
+`  ``}``)`\
+`}`
 
 #### Step 4/4 - Creating the `shiny` App
 
 Finally, we include `extract_ui` in the UI of the `shinyApp`, and
 utilize `extract_srv` in the server function of the `shinyApp`:
 
-``` r
-shinyApp(
-  ui = bslib::page_fluid(extract_ui("data_extract", simple_des)),
-  server = function(input, output, session) {
-    extract_srv("data_extract", datasets, simple_des, join_keys)
-  }
-)
-```
+\
+[`shinyApp`](https://rdrr.io/pkg/shiny/man/shinyApp.html)`(`\
+`  ui ``=`` ``bslib``::`[`page_fluid`](https://rstudio.github.io/bslib/reference/page.html)`(``extract_ui``(``"data_extract"``, ``simple_des``)``)``,`\
+`  server ``=`` ``function``(``input``, ``output``, ``session``)`` ``{`\
+`    ``extract_srv``(``"data_extract"``, ``datasets``, ``simple_des``, ``join_keys``)`\
+`  ``}`\
+`)`
 
 ## Try it out in Shinylive
 

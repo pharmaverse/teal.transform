@@ -69,7 +69,7 @@ filter_spec_internal(
   (`character` or `delayed_data`) the vector of dataset column names
   available to build dynamic filter `delayed_data` objects can be
   created via
-  [`variable_choices()`](https://insightsengineering.github.io/teal.transform/reference/variable_choices.md).
+  [`variable_choices()`](https://pharmaverse.github.io/teal.transform/reference/variable_choices.md).
 
 - vars_selected:
 
@@ -111,9 +111,9 @@ filter_spec_internal(
   The `sep` input has to be `" - "` in this case.
 
   `delayed_data` objects can be created via
-  [`variable_choices()`](https://insightsengineering.github.io/teal.transform/reference/variable_choices.md)
+  [`variable_choices()`](https://pharmaverse.github.io/teal.transform/reference/variable_choices.md)
   or
-  [`value_choices()`](https://insightsengineering.github.io/teal.transform/reference/value_choices.md).
+  [`value_choices()`](https://pharmaverse.github.io/teal.transform/reference/value_choices.md).
 
 - selected:
 

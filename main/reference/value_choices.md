@@ -1,7 +1,7 @@
 # Value labeling and filtering based on variable relationship
 
 Wrapper on
-[choices_labeled](https://insightsengineering.github.io/teal.transform/reference/choices_labeled.md)
+[choices_labeled](https://pharmaverse.github.io/teal.transform/reference/choices_labeled.md)
 to label variable values basing on other variable values.
 
 ## Usage

@@ -1,7 +1,7 @@
 # Set "`<choice>:<label>`" type of names
 
 This is often useful for
-[`choices_selected()`](https://insightsengineering.github.io/teal.transform/reference/choices_selected.md)
+[`choices_selected()`](https://pharmaverse.github.io/teal.transform/reference/choices_selected.md)
 as it marks up the drop-down boxes for
 [`shiny::selectInput()`](https://rdrr.io/pkg/shiny/man/selectInput.html).
 
@@ -36,7 +36,7 @@ print(x, ...)
 
   (`character`) vector containing the types of the columns to be used
   for applying the appropriate icons to the
-  [choices_selected](https://insightsengineering.github.io/teal.transform/reference/choices_selected.md)
+  [choices_selected](https://pharmaverse.github.io/teal.transform/reference/choices_selected.md)
   drop down box (e.g. "numeric").
 
 - x:

@@ -1,7 +1,7 @@
 # Variable label extraction and custom selection from data
 
 Wrapper on
-[choices_labeled](https://insightsengineering.github.io/teal.transform/reference/choices_labeled.md)
+[choices_labeled](https://pharmaverse.github.io/teal.transform/reference/choices_labeled.md)
 to label variables basing on existing labels in data.
 
 ## Usage
@@ -46,7 +46,7 @@ variable_choices(data, subset = NULL, fill = TRUE, key = NULL)
   This is an optional argument, which allows to identify variables
   associated with the primary key and display the appropriate icon for
   them in the
-  [`teal.widgets::optionalSelectInput()`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/optionalSelectInput.html)
+  [`teal.widgets::optionalSelectInput()`](https://rdrr.io/pkg/teal.widgets/man/optionalSelectInput.html)
   widget.
 
 ## Value
@@ -177,7 +177,7 @@ variable_choices("ADRS", subset = function(data) {
 #>     idx <- vapply(data, is.factor, logical(1))
 #>     names(data)[idx]
 #> }
-#> <environment: 0x55eb7a01cf50>
+#> <environment: 0x56417c47f750>
 #> $ key
 #> NULL
 ```

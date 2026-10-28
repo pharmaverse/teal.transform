@@ -13,7 +13,7 @@ data_extract_select_ui(select, id = "select")
 - select:
 
   (`select_spec`) A definition of a select spec element. Setting
-  [`select_spec()`](https://insightsengineering.github.io/teal.transform/reference/select_spec.md)
+  [`select_spec()`](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)
   with `ordered = TRUE` makes this selector responsive to the variable
   selection order.
 

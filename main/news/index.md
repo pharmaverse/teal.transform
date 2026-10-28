@@ -1,6 +1,16 @@
 # Changelog
 
+## teal.transform 0.7.2
+
+CRAN release: 2026-06-29
+
+#### Miscellaneous
+
+- Update maintainer.
+
 ## teal.transform 0.7.1
+
+CRAN release: 2025-12-03
 
 #### Miscellaneous
 
@@ -14,7 +24,7 @@ CRAN release: 2025-08-20
 #### Enhancements
 
 - Update all UI components to use `bslib`
-  ([\#250](https://github.com/insightsengineering/teal.transform/issues/250)).
+  ([\#250](https://github.com/pharmaverse/teal.transform/issues/250)).
 
 ## teal.transform 0.6.0
 
@@ -55,9 +65,9 @@ CRAN release: 2024-02-17
 - Removed `scda` package dependency from examples.
 - Deprecated `data_merge_module()` and `data_merge_srv()`.
 - The `get_relabel_call` function now returns a call to
-  [`teal.data::col_relabel`](https://insightsengineering.github.io/teal.data/latest-tag/reference/col_labels.html)
+  [`teal.data::col_relabel`](https://rdrr.io/pkg/teal.data/man/col_labels.html)
   instead of one to
-  [`formatters::var_relabel`](https://insightsengineering.github.io/formatters/latest-tag/reference/var_relabel.html).
+  [`formatters::var_relabel`](https://pharmaverse.github.io/formatters/latest-tag/reference/var_relabel.html).
 - Update installation instruction
 
 ## teal.transform 0.3.0
@@ -69,10 +79,10 @@ CRAN release: 2024-02-17
 #### Enhancements
 
 - Updated error messages for
-  [`choices_labeled()`](https://insightsengineering.github.io/teal.transform/reference/choices_labeled.md),
-  [`variable_choices()`](https://insightsengineering.github.io/teal.transform/reference/variable_choices.md)
+  [`choices_labeled()`](https://pharmaverse.github.io/teal.transform/reference/choices_labeled.md),
+  [`variable_choices()`](https://pharmaverse.github.io/teal.transform/reference/variable_choices.md)
   and
-  [`value_choices()`](https://insightsengineering.github.io/teal.transform/reference/value_choices.md)
+  [`value_choices()`](https://pharmaverse.github.io/teal.transform/reference/value_choices.md)
   to be more informative.
 - Updated `data_extract` to be compatible with `shinyvalidate`:
   `data_extract_srv` and `data_extract_multiple_srv` accept
@@ -117,7 +127,7 @@ CRAN release: 2024-02-17
 #### Enhancements
 
 - Updated the examples and the tests to use
-  [`teal.slice::init_filtered_data`](https://insightsengineering.github.io/teal.slice/latest-tag/reference/init_filtered_data.html)
+  [`teal.slice::init_filtered_data`](https://rdrr.io/pkg/teal.slice/man/init_filtered_data.html)
   to initialize a `FilteredData` object.
 - Updated the vignettes and the `README` content.
 - Updated `data_merge_module` and `merge_expression_module` to accept
@@ -153,11 +163,11 @@ CRAN release: 2024-02-17
 #### New features
 
 - Added new argument `ordered` for
-  [`select_spec()`](https://insightsengineering.github.io/teal.transform/reference/select_spec.md)
+  [`select_spec()`](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)
   to flag whether order of the selection should be tracked.
 
 #### Miscellaneous
 
 - The `get_relabel_call` function now returns
-  [`formatters::var_relabel`](https://insightsengineering.github.io/formatters/latest-tag/reference/var_relabel.html)
+  [`formatters::var_relabel`](https://pharmaverse.github.io/formatters/latest-tag/reference/var_relabel.html)
   instead of `teal.data::var_relabel`.

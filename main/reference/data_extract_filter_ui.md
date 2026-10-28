@@ -13,7 +13,7 @@ data_extract_filter_ui(filter, id = "filter")
 - filter:
 
   (`filter_spec`) the object generated with
-  [`filter_spec()`](https://insightsengineering.github.io/teal.transform/reference/filter_spec.md).
+  [`filter_spec()`](https://pharmaverse.github.io/teal.transform/reference/filter_spec.md).
 
 - id:
 
@@ -27,5 +27,5 @@ data_extract_filter_ui(filter, id = "filter")
 
 Creates two `optionSelectInput` elements (one for column and one for
 values) based on a definition of a
-[`filter_spec()`](https://insightsengineering.github.io/teal.transform/reference/filter_spec.md)
+[`filter_spec()`](https://pharmaverse.github.io/teal.transform/reference/filter_spec.md)
 object.

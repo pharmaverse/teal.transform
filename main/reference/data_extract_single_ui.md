@@ -17,7 +17,7 @@ data_extract_single_ui(id = NULL, single_data_extract_spec)
 - single_data_extract_spec:
 
   (`data_extract_spec`) the
-  [`data_extract_spec()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+  [`data_extract_spec()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
   object to handle.
 
 ## Value

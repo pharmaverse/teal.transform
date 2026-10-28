@@ -24,10 +24,10 @@ filter_spec(
   (`character` or `delayed_data`) object. Character vector giving the
   columns to be filtered. These should be key variables of the data set
   to be filtered. `delayed_data` objects can be created via
-  [`variable_choices()`](https://insightsengineering.github.io/teal.transform/reference/variable_choices.md),
-  [`value_choices()`](https://insightsengineering.github.io/teal.transform/reference/value_choices.md),
+  [`variable_choices()`](https://pharmaverse.github.io/teal.transform/reference/variable_choices.md),
+  [`value_choices()`](https://pharmaverse.github.io/teal.transform/reference/value_choices.md),
   or
-  [`choices_selected()`](https://insightsengineering.github.io/teal.transform/reference/choices_selected.md).
+  [`choices_selected()`](https://pharmaverse.github.io/teal.transform/reference/choices_selected.md).
 
 - choices:
 
@@ -49,9 +49,9 @@ filter_spec(
   The `sep` input has to be `" - "` in this case.
 
   `delayed_data` objects can be created via
-  [`variable_choices()`](https://insightsengineering.github.io/teal.transform/reference/variable_choices.md)
+  [`variable_choices()`](https://pharmaverse.github.io/teal.transform/reference/variable_choices.md)
   or
-  [`value_choices()`](https://insightsengineering.github.io/teal.transform/reference/value_choices.md).
+  [`value_choices()`](https://pharmaverse.github.io/teal.transform/reference/value_choices.md).
 
 - selected:
 

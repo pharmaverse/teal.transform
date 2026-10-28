@@ -94,7 +94,7 @@ data_extract_multiple_srv(
 ## Value
 
 reactive named `list` containing outputs from
-[`data_extract_srv()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_srv.md).
+[`data_extract_srv()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_srv.md).
 Output list names are the same as `data_extract` input argument.
 
 ## Examples

@@ -14,7 +14,7 @@ get_dataset_prefixed_col_names(data)
 
   (`data.frame`) Data with attribute `filter_and_columns`. This can only
   be created by
-  [`data_extract_srv()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_srv.md),
+  [`data_extract_srv()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_srv.md),
   which returns a shiny
   [`shiny::reactive()`](https://rdrr.io/pkg/shiny/man/reactive.html).
 
@@ -24,4 +24,4 @@ A named `character` vector with the non-key columns of the `data`.
 
 ## References
 
-[`data_extract_srv()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_srv.md)
+[`data_extract_srv()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_srv.md)

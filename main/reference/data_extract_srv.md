@@ -1,7 +1,7 @@
 # Extraction of the selector(s) details
 
 Extracting details of the selection(s) in
-[data_extract_ui](https://insightsengineering.github.io/teal.transform/reference/data_extract_ui.md)
+[data_extract_ui](https://pharmaverse.github.io/teal.transform/reference/data_extract_ui.md)
 elements.
 
 ## Usage
@@ -52,7 +52,7 @@ data_extract_srv(
 
   (`data_extract_spec` or a list of `data_extract_spec`) A list of data
   filter and select information constructed by
-  [data_extract_spec](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md).
+  [data_extract_spec](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md).
 
 - ...:
 

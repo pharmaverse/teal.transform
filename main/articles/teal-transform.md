@@ -25,15 +25,15 @@ flexibility to transform their data right from the UI.
 To explore the combined use of data extraction and merging to see the
 full use of `teal.transform`, please explore the [Combining data-extract
 with
-data-merge](https://insightsengineering.github.io/teal.transform/articles/combining-data-extract-with-data-merge.md)
+data-merge](https://pharmaverse.github.io/teal.transform/articles/combining-data-extract-with-data-merge.md)
 vignette.
 
 To delve into the process of selecting specific data columns, please
 consult the [Data
-Extraction](https://insightsengineering.github.io/teal.transform/articles/data-extract.md)
+Extraction](https://pharmaverse.github.io/teal.transform/articles/data-extract.md)
 vignette.
 
 For comprehensive information regarding data merging, please refer to
 the [Data
-Merge](https://insightsengineering.github.io/teal.transform/articles/data-merge.md)
+Merge](https://pharmaverse.github.io/teal.transform/articles/data-merge.md)
 vignette.

@@ -55,27 +55,27 @@ Resolved object.
 ## Methods (by class)
 
 - `resolve(delayed_variable_choices)`: Call
-  [`variable_choices()`](https://insightsengineering.github.io/teal.transform/reference/variable_choices.md)
+  [`variable_choices()`](https://pharmaverse.github.io/teal.transform/reference/variable_choices.md)
   on the delayed `variable_choices` object.
 
 - `resolve(delayed_value_choices)`: Call
-  [`value_choices()`](https://insightsengineering.github.io/teal.transform/reference/value_choices.md)
+  [`value_choices()`](https://pharmaverse.github.io/teal.transform/reference/value_choices.md)
   on the delayed `value_choices` object.
 
 - `resolve(delayed_choices_selected)`: Call
-  [`select_spec()`](https://insightsengineering.github.io/teal.transform/reference/select_spec.md)
+  [`select_spec()`](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)
   on the delayed `choices_selected` object.
 
 - `resolve(delayed_select_spec)`: Call
-  [`select_spec()`](https://insightsengineering.github.io/teal.transform/reference/select_spec.md)
+  [`select_spec()`](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)
   on the delayed specification.
 
 - `resolve(delayed_filter_spec)`: Call
-  [`filter_spec()`](https://insightsengineering.github.io/teal.transform/reference/filter_spec.md)
+  [`filter_spec()`](https://pharmaverse.github.io/teal.transform/reference/filter_spec.md)
   on the delayed specification.
 
 - `resolve(delayed_data_extract_spec)`: Call
-  [`data_extract_spec()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+  [`data_extract_spec()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
   on the delayed specification.
 
 - `resolve(list)`: Iterates over elements of the list and recursively
@@ -87,5 +87,5 @@ Resolved object.
 ## Note
 
 This is an internal function that is used by
-[`resolve_delayed()`](https://insightsengineering.github.io/teal.transform/reference/resolve_delayed.md).
+[`resolve_delayed()`](https://pharmaverse.github.io/teal.transform/reference/resolve_delayed.md).
 All the methods are used internally only.

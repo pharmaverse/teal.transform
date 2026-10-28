@@ -1,12 +1,12 @@
 # Merge expression module
 
 Convenient wrapper to combine
-[`data_extract_multiple_srv()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_multiple_srv.md)
+[`data_extract_multiple_srv()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_multiple_srv.md)
 and
-[`merge_expression_srv()`](https://insightsengineering.github.io/teal.transform/reference/merge_expression_srv.md)
+[`merge_expression_srv()`](https://pharmaverse.github.io/teal.transform/reference/merge_expression_srv.md)
 when no additional processing is required. Compare the example below
 with that found in
-[`merge_expression_srv()`](https://insightsengineering.github.io/teal.transform/reference/merge_expression_srv.md).
+[`merge_expression_srv()`](https://pharmaverse.github.io/teal.transform/reference/merge_expression_srv.md).
 
 ## Usage
 
@@ -77,11 +77,11 @@ merge_expression_module(
 ## Value
 
 Reactive expression with output from
-[`merge_expression_srv()`](https://insightsengineering.github.io/teal.transform/reference/merge_expression_srv.md).
+[`merge_expression_srv()`](https://pharmaverse.github.io/teal.transform/reference/merge_expression_srv.md).
 
 ## See also
 
-[`merge_expression_srv()`](https://insightsengineering.github.io/teal.transform/reference/merge_expression_srv.md)
+[`merge_expression_srv()`](https://pharmaverse.github.io/teal.transform/reference/merge_expression_srv.md)
 
 ## Examples
 

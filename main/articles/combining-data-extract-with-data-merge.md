@@ -21,46 +21,45 @@ operations in a `shiny` app using `teal.transform`.
 
 #### Step 1/5 - Preparing the Data
 
-``` r
-library(teal.transform)
-library(teal.data)
-#> Loading required package: teal.code
-library(shiny)
-
-# Define data.frame objects
-ADSL <- teal.data::rADSL
-ADTTE <- teal.data::rADTTE
-
-# create a list of reactive data.frame objects
-datasets <- list(
-  ADSL = reactive(ADSL),
-  ADTTE = reactive(ADTTE)
-)
-
-# create join_keys
-join_keys <- join_keys(
-  join_key("ADSL", "ADSL", c("STUDYID", "USUBJID")),
-  join_key("ADSL", "ADTTE", c("STUDYID", "USUBJID")),
-  join_key("ADTTE", "ADTTE", c("STUDYID", "USUBJID", "PARAMCD"))
-)
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.transform`](https://pharmaverse.github.io/teal.transform/)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.data`](https://insightsengineering.github.io/teal.data/)`)`\
+`#> Loading required package: teal.code`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`shiny`](https://shiny.posit.co/)`)`\
+\
+`# Define data.frame objects`\
+`ADSL`` ``<-`` ``teal.data``::`[`rADSL`](https://rdrr.io/pkg/teal.data/man/random_cdisc_data.html)\
+`ADTTE`` ``<-`` ``teal.data``::`[`rADTTE`](https://rdrr.io/pkg/teal.data/man/random_cdisc_data.html)\
+\
+`# create a list of reactive data.frame objects`\
+`datasets`` ``<-`` `[`list`](https://rdrr.io/r/base/list.html)`(`\
+`  ADSL ``=`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``ADSL``)``,`\
+`  ADTTE ``=`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``ADTTE``)`\
+`)`\
+\
+`# create join_keys`\
+`join_keys`` ``<-`` `[`join_keys`](https://rdrr.io/pkg/teal.data/man/join_keys.html)`(`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"ADSL"``, ``"ADSL"``, `[`c`](https://rdrr.io/r/base/c.html)`(``"STUDYID"``, ``"USUBJID"``)``)``,`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"ADSL"``, ``"ADTTE"``, `[`c`](https://rdrr.io/r/base/c.html)`(``"STUDYID"``, ``"USUBJID"``)``)``,`\
+`  `[`join_key`](https://rdrr.io/pkg/teal.data/man/join_key.html)`(``"ADTTE"``, ``"ADTTE"``, `[`c`](https://rdrr.io/r/base/c.html)`(``"STUDYID"``, ``"USUBJID"``, ``"PARAMCD"``)``)`\
+`)`
 
 #### Step 2/5 - Creating data extract specifications
 
 In the following code block, we create a `data_extract_spec` object for
 each dataset, as illustrated above. It is created by the
-[`data_extract_spec()`](https://insightsengineering.github.io/teal.transform/reference/data_extract_spec.md)
+[`data_extract_spec()`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)
 function which takes in four arguments:
 
 1.  `dataname` is the name of the dataset to be extracted.
 2.  `select` helps specify the columns from which we wish to allow the
     app user to select. It can be generated using the function
-    [`select_spec()`](https://insightsengineering.github.io/teal.transform/reference/select_spec.md).
+    [`select_spec()`](https://pharmaverse.github.io/teal.transform/reference/select_spec.md).
     In the case of `ADSL`, we restrict the selection to `AGE`, `SEX`,
     and `BMRKR1`, with `AGE` being the default selection.
 3.  `filter` helps specify the values of a variable we wish to filter
     during extraction. It can be generated using the function
-    [`filter_spec()`](https://insightsengineering.github.io/teal.transform/reference/filter_spec.md).
+    [`filter_spec()`](https://pharmaverse.github.io/teal.transform/reference/filter_spec.md).
     In the case of `ADTTE`, we filter the variable `PARAMCD` by allowing
     users to choose from `CRSD`, `EFS`, `OS`, and `PFS`, with `OS` being
     the default filter.
@@ -68,35 +67,34 @@ function which takes in four arguments:
     be reshaped from long to wide format. By default it is set to
     `FALSE`.
 
-``` r
-adsl_extract <- data_extract_spec(
-  dataname = "ADSL",
-  select = select_spec(
-    label = "Select variable:",
-    choices = c("AGE", "SEX", "BMRKR1"),
-    selected = "AGE",
-    multiple = TRUE,
-    fixed = FALSE
-  )
-)
-
-adtte_extract <- data_extract_spec(
-  dataname = "ADTTE",
-  select = select_spec(
-    choices = c("AVAL", "AVALC", "ASEQ"),
-    selected = "AVAL",
-    multiple = TRUE,
-    fixed = FALSE
-  ),
-  filter = filter_spec(
-    vars = "PARAMCD",
-    choices = c("CRSD", "EFS", "OS", "PFS"),
-    selected = "OS"
-  )
-)
-
-data_extracts <- list(adsl_extract = adsl_extract, adtte_extract = adtte_extract)
-```
+\
+`adsl_extract`` ``<-`` `[`data_extract_spec`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)`(`\
+`  dataname ``=`` ``"ADSL"``,`\
+`  select ``=`` `[`select_spec`](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)`(`\
+`    label ``=`` ``"Select variable:"``,`\
+`    choices ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"AGE"``, ``"SEX"``, ``"BMRKR1"``)``,`\
+`    selected ``=`` ``"AGE"``,`\
+`    multiple ``=`` ``TRUE``,`\
+`    fixed ``=`` ``FALSE`\
+`  ``)`\
+`)`\
+\
+`adtte_extract`` ``<-`` `[`data_extract_spec`](https://pharmaverse.github.io/teal.transform/reference/data_extract_spec.md)`(`\
+`  dataname ``=`` ``"ADTTE"``,`\
+`  select ``=`` `[`select_spec`](https://pharmaverse.github.io/teal.transform/reference/select_spec.md)`(`\
+`    choices ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"AVAL"``, ``"AVALC"``, ``"ASEQ"``)``,`\
+`    selected ``=`` ``"AVAL"``,`\
+`    multiple ``=`` ``TRUE``,`\
+`    fixed ``=`` ``FALSE`\
+`  ``)``,`\
+`  filter ``=`` `[`filter_spec`](https://pharmaverse.github.io/teal.transform/reference/filter_spec.md)`(`\
+`    vars ``=`` ``"PARAMCD"``,`\
+`    choices ``=`` `[`c`](https://rdrr.io/r/base/c.html)`(``"CRSD"``, ``"EFS"``, ``"OS"``, ``"PFS"``)``,`\
+`    selected ``=`` ``"OS"`\
+`  ``)`\
+`)`\
+\
+`data_extracts`` ``<-`` `[`list`](https://rdrr.io/r/base/list.html)`(``adsl_extract ``=`` ``adsl_extract``, adtte_extract ``=`` ``adtte_extract``)`
 
 #### Step 3/5 - Creating the UI
 
@@ -106,33 +104,32 @@ the UI components for the `shiny` app.
 Note that we take in the list of `data_extract` objects as input, and
 make use of the `data_extract_ui` function to create our UI.
 
-``` r
-merge_ui <- function(id, data_extracts) {
-  ns <- NS(id)
-  sidebarLayout(
-    sidebarPanel(
-      h3("Encoding"),
-      tags$div(
-        data_extract_ui(
-          ns("adsl_extract"), # must correspond with data_extracts list names
-          label = "ADSL extract",
-          data_extracts[[1]]
-        ),
-        data_extract_ui(
-          ns("adtte_extract"), # must correspond with data_extracts list names
-          label = "ADTTE extract",
-          data_extracts[[2]]
-        )
-      )
-    ),
-    mainPanel(
-      h3("Output"),
-      verbatimTextOutput(ns("expr")),
-      dataTableOutput(ns("data"))
-    )
-  )
-}
-```
+\
+`merge_ui`` ``<-`` ``function``(``id``, ``data_extracts``)`` ``{`\
+`  ``ns`` ``<-`` `[`NS`](https://rdrr.io/pkg/shiny/man/NS.html)`(``id``)`\
+`  `[`sidebarLayout`](https://rdrr.io/pkg/shiny/man/sidebarLayout.html)`(`\
+`    `[`sidebarPanel`](https://rdrr.io/pkg/shiny/man/sidebarLayout.html)`(`\
+`      `[`h3`](https://rstudio.github.io/htmltools/reference/builder.html)`(``"Encoding"``)``,`\
+`      ``tags``$``div``(`\
+`        `[`data_extract_ui`](https://pharmaverse.github.io/teal.transform/reference/data_extract_ui.md)`(`\
+`          ``ns``(``"adsl_extract"``)``, ``# must correspond with data_extracts list names`\
+`          label ``=`` ``"ADSL extract"``,`\
+`          ``data_extracts``[[``1``]``]`\
+`        ``)``,`\
+`        `[`data_extract_ui`](https://pharmaverse.github.io/teal.transform/reference/data_extract_ui.md)`(`\
+`          ``ns``(``"adtte_extract"``)``, ``# must correspond with data_extracts list names`\
+`          label ``=`` ``"ADTTE extract"``,`\
+`          ``data_extracts``[[``2``]``]`\
+`        ``)`\
+`      ``)`\
+`    ``)``,`\
+`    `[`mainPanel`](https://rdrr.io/pkg/shiny/man/sidebarLayout.html)`(`\
+`      `[`h3`](https://rstudio.github.io/htmltools/reference/builder.html)`(``"Output"``)``,`\
+`      `[`verbatimTextOutput`](https://rdrr.io/pkg/shiny/man/textOutput.html)`(``ns``(``"expr"``)``)``,`\
+`      `[`dataTableOutput`](https://rdrr.io/pkg/shiny/man/renderDataTable.html)`(``ns``(``"data"``)``)`\
+`    ``)`\
+`  ``)`\
+`}`
 
 #### Step 4/5 - Creating the Server Logic
 
@@ -143,33 +140,32 @@ This function takes as arguments the datasets (as a list of reactive
 `data.frame`), the data extract specifications created above (the
 `data_extract` list), and the `join_keys` object (read more about the
 `join_keys` in the [Join Keys vignette of
-`teal.data`](https://insightsengineering.github.io/teal.data/latest-tag/articles/join-keys.html)).
+`teal.data`](https://pharmaverse.github.io/teal.data/latest-tag/articles/join-keys.html)).
 We make use of the `merge_expression_srv` function to get a reactive
 list containing merge expression and information needed to perform the
 transformation - see more in `merge_expression_srv` documentation. We
 print this expression in the UI and also evaluate it to get the final
 `ANL` dataset which is also displayed as a table in the UI.
 
-``` r
-merge_srv <- function(id, datasets, data_extracts, join_keys) {
-  moduleServer(id, function(input, output, session) {
-    selector_list <- data_extract_multiple_srv(data_extracts, datasets, join_keys)
-    merged_data <- merge_expression_srv(
-      selector_list = selector_list,
-      datasets = datasets,
-      join_keys = join_keys,
-      merge_function = "dplyr::left_join"
-    )
-    ANL <- reactive({
-      data_list <- lapply(datasets, function(ds) ds())
-      eval(envir = list2env(data_list), expr = as.expression(merged_data()$expr))
-    })
-
-    output$expr <- renderText(paste(merged_data()$expr, collapse = "\n"))
-    output$data <- renderDataTable(ANL())
-  })
-}
-```
+\
+`merge_srv`` ``<-`` ``function``(``id``, ``datasets``, ``data_extracts``, ``join_keys``)`` ``{`\
+`  `[`moduleServer`](https://rdrr.io/pkg/shiny/man/moduleServer.html)`(``id``, ``function``(``input``, ``output``, ``session``)`` ``{`\
+`    ``selector_list`` ``<-`` `[`data_extract_multiple_srv`](https://pharmaverse.github.io/teal.transform/reference/data_extract_multiple_srv.md)`(``data_extracts``, ``datasets``, ``join_keys``)`\
+`    ``merged_data`` ``<-`` `[`merge_expression_srv`](https://pharmaverse.github.io/teal.transform/reference/merge_expression_srv.md)`(`\
+`      selector_list ``=`` ``selector_list``,`\
+`      datasets ``=`` ``datasets``,`\
+`      join_keys ``=`` ``join_keys``,`\
+`      merge_function ``=`` ``"dplyr::left_join"`\
+`    ``)`\
+`    ``ANL`` ``<-`` `[`reactive`](https://rdrr.io/pkg/shiny/man/reactive.html)`(``{`\
+`      ``data_list`` ``<-`` `[`lapply`](https://rdrr.io/r/base/lapply.html)`(``datasets``, ``function``(``ds``)`` ``ds``(``)``)`\
+`      `[`eval`](https://rdrr.io/r/base/eval.html)`(``envir ``=`` `[`list2env`](https://rdrr.io/r/base/list2env.html)`(``data_list``)``, expr ``=`` `[`as.expression`](https://rdrr.io/r/base/expression.html)`(``merged_data``(``)``$``expr``)``)`\
+`    ``}``)`\
+\
+`    ``output``$``expr`` ``<-`` `[`renderText`](https://rdrr.io/pkg/shiny/man/renderPrint.html)`(`[`paste`](https://rdrr.io/r/base/paste.html)`(``merged_data``(``)``$``expr``, collapse ``=`` ``"\n"``)``)`\
+`    ``output``$``data`` ``<-`` `[`renderDataTable`](https://rdrr.io/pkg/shiny/man/renderDataTable.html)`(``ANL``(``)``)`\
+`  ``}``)`\
+`}`
 
 #### Step 5/5 - Creating the `shiny` App
 
@@ -177,14 +173,13 @@ Finally, we include `merge_ui` and `merge_srv` in the UI and server
 components of the `shinyApp`, respectively, using the `data_extract`s
 defined in the first code block and the `datasets` object:
 
-``` r
-shinyApp(
-  ui = bslib::page_fluid(merge_ui("data_merge", data_extracts)),
-  server = function(input, output, session) {
-    merge_srv("data_merge", datasets, data_extracts, join_keys)
-  }
-)
-```
+\
+[`shinyApp`](https://rdrr.io/pkg/shiny/man/shinyApp.html)`(`\
+`  ui ``=`` ``bslib``::`[`page_fluid`](https://rstudio.github.io/bslib/reference/page.html)`(``merge_ui``(``"data_merge"``, ``data_extracts``)``)``,`\
+`  server ``=`` ``function``(``input``, ``output``, ``session``)`` ``{`\
+`    ``merge_srv``(``"data_merge"``, ``datasets``, ``data_extracts``, ``join_keys``)`\
+`  ``}`\
+`)`
 
 ## Try it out in Shinylive
 

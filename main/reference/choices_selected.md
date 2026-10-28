@@ -6,7 +6,7 @@ with the selected elements appearing first or whether to block the user
 from making selections.
 
 Can be used in UI input elements such as
-[`teal.widgets::optionalSelectInput()`](https://insightsengineering.github.io/teal.widgets/latest-tag/reference/optionalSelectInput.html).
+[`teal.widgets::optionalSelectInput()`](https://rdrr.io/pkg/teal.widgets/man/optionalSelectInput.html).
 
 ## Usage
 
@@ -28,9 +28,9 @@ is.choices_selected(x)
   (`character`) vector of possible choices or `delayed_data` object.
 
   See
-  [`variable_choices()`](https://insightsengineering.github.io/teal.transform/reference/variable_choices.md)
+  [`variable_choices()`](https://pharmaverse.github.io/teal.transform/reference/variable_choices.md)
   and
-  [`value_choices()`](https://insightsengineering.github.io/teal.transform/reference/value_choices.md).
+  [`value_choices()`](https://pharmaverse.github.io/teal.transform/reference/value_choices.md).
 
 - selected:
 
@@ -367,7 +367,7 @@ choices_selected(variable_choices("ADSL", subset = function(data) {
 #>     idx <- vapply(data, is.factor, logical(1))
 #>     names(data)[idx]
 #> }
-#> <environment: 0x55eb7610e318>
+#> <environment: 0x56417497a468>
 #>   $ key
 #>   NULL
 #> $ selected

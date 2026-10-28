@@ -22,7 +22,7 @@ format_data_extract(data_extract)
 ## Details
 
 This function formats the output of
-[`data_extract_srv`](https://insightsengineering.github.io/teal.transform/reference/data_extract_srv.md).
+[`data_extract_srv`](https://pharmaverse.github.io/teal.transform/reference/data_extract_srv.md).
 See the example for more information.
 
 ## Examples
