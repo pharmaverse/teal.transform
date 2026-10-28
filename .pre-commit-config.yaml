@@ -24,10 +24,10 @@ repos:
           - shinyjs
           - shinyvalidate
           - stats
-          - insightsengineering/teal.data
-          - insightsengineering/teal.logger
-          - insightsengineering/teal.slice
-          - insightsengineering/teal.widgets
+          - pharmaverse/teal.data
+          - pharmaverse/teal.logger
+          - pharmaverse/teal.slice
+          - pharmaverse/teal.widgets
           - tidyr
           - tidyselect
       - id: spell-check

@@ -6,22 +6,22 @@
 [![Last Month Downloads](http://cranlogs.r-pkg.org/badges/last-month/teal.transform?color=green)](https://cran.r-project.org/package=teal.transform)
 [![Last Week Downloads](http://cranlogs.r-pkg.org/badges/last-week/teal.transform?color=green)](https://cran.r-project.org/package=teal.transform)
 
-[![Check 🛠](https://github.com/insightsengineering/teal.transform/actions/workflows/check.yaml/badge.svg)](https://insightsengineering.github.io/teal.transform/main/unit-test-report/)
-[![Docs 📚](https://github.com/insightsengineering/teal.transform/actions/workflows/docs.yaml/badge.svg)](https://insightsengineering.github.io/teal.transform/latest-tag/)
-[![Code Coverage 📔](https://raw.githubusercontent.com/insightsengineering/teal.transform/_xml_coverage_reports/data/main/badge.svg)](https://insightsengineering.github.io/teal.transform/main/coverage-report/)
+[![Check 🛠](https://github.com/pharmaverse/teal.transform/actions/workflows/check.yaml/badge.svg)](https://pharmaverse.github.io/teal.transform/main/unit-test-report/)
+[![Docs 📚](https://github.com/pharmaverse/teal.transform/actions/workflows/docs.yaml/badge.svg)](https://pharmaverse.github.io/teal.transform/latest-tag/)
+[![Code Coverage 📔](https://raw.githubusercontent.com/pharmaverse/teal.transform/_xml_coverage_reports/data/main/badge.svg)](https://pharmaverse.github.io/teal.transform/main/coverage-report/)
 
-![GitHub forks](https://img.shields.io/github/forks/insightsengineering/teal.transform?style=social)
-![GitHub repo stars](https://img.shields.io/github/stars/insightsengineering/teal.transform?style=social)
+![GitHub forks](https://img.shields.io/github/forks/pharmaverse/teal.transform?style=social)
+![GitHub repo stars](https://img.shields.io/github/stars/pharmaverse/teal.transform?style=social)
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/insightsengineering/teal.transform)
-![GitHub contributors](https://img.shields.io/github/contributors/insightsengineering/teal.transform)
-![GitHub last commit](https://img.shields.io/github/last-commit/insightsengineering/teal.transform)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/insightsengineering/teal.transform)
-![GitHub repo size](https://img.shields.io/github/repo-size/insightsengineering/teal.transform)
-![GitHub language count](https://img.shields.io/github/languages/count/insightsengineering/teal.transform)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/pharmaverse/teal.transform)
+![GitHub contributors](https://img.shields.io/github/contributors/pharmaverse/teal.transform)
+![GitHub last commit](https://img.shields.io/github/last-commit/pharmaverse/teal.transform)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/pharmaverse/teal.transform)
+![GitHub repo size](https://img.shields.io/github/repo-size/pharmaverse/teal.transform)
+![GitHub language count](https://img.shields.io/github/languages/count/pharmaverse/teal.transform)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Current Version](https://img.shields.io/github/r-package/v/insightsengineering/teal.transform/main?color=purple\&label=package%20version)](https://github.com/insightsengineering/teal.transform/tree/main)
-[![Open Issues](https://img.shields.io/github/issues-raw/insightsengineering/teal.transform?color=red\&label=open%20issues)](https://github.com/insightsengineering/teal.transform/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+[![Current Version](https://img.shields.io/github/r-package/v/pharmaverse/teal.transform/main?color=purple\&label=package%20version)](https://github.com/pharmaverse/teal.transform/tree/main)
+[![Open Issues](https://img.shields.io/github/issues-raw/pharmaverse/teal.transform?color=red\&label=open%20issues)](https://github.com/pharmaverse/teal.transform/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
 <!-- end badges -->
 
 This package contains functions and shiny modules for extracting and merging data within the `teal` framework.
@@ -36,12 +36,12 @@ Alternatively, you might want to use the development version.
 
 ```r
 # install.packages("pak")
-pak::pak("insightsengineering/teal.transform")
+pak::pak("pharmaverse/teal.transform")
 ```
 
 ## Usage
 
-To understand how to use this package, please refer to the [Getting Started](https://insightsengineering.github.io/teal.transform/latest-tag/articles/teal-transform.html) article, which provides multiple examples of code implementation.
+To understand how to use this package, please refer to the [Getting Started](https://pharmaverse.github.io/teal.transform/latest-tag/articles/teal-transform.html) article, which provides multiple examples of code implementation.
 
 Below is a small example usage:
 
@@ -67,7 +67,7 @@ server <- function(input, output, session) {}
 shinyApp(ui, server)
 ```
 
-![Showcase](https://github.com/insightsengineering/teal.transform/blob/main/assets/img/showcase.jpg)
+![Showcase](https://github.com/pharmaverse/teal.transform/blob/main/assets/img/showcase.jpg)
 
 ## Getting help
 
