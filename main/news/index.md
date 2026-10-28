@@ -1,5 +1,15 @@
 # Changelog
 
+## teal.transform 0.7.2.9001
+
+#### Miscellaneous
+
+- teal.transform has moved to the pharmaverse GitHub organisation:
+  <https://github.com/pharmaverse/teal.transform>.
+- Appsilon becomes a core contributor and joins F. Hoffmann-La Roche AG
+  as a copyright holder of teal.transform, working alongside the wider
+  contributor community.
+
 ## teal.transform 0.7.2
 
 CRAN release: 2026-06-29

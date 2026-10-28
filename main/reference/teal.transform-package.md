@@ -36,3 +36,5 @@ Authors:
 Other contributors:
 
 - F. Hoffmann-La Roche AG \[copyright holder, funder\]
+
+- Appsilon Sp. z o.o. <teal@appsilon.com> \[copyright holder, funder\]

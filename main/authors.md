@@ -20,6 +20,8 @@
 
 - **F. Hoffmann-La Roche AG**. Copyright holder, funder.
 
+- **Appsilon Sp. z o.o.**. Copyright holder, funder.
+
 ## Citation
 
 Source:
@@ -27,13 +29,13 @@ Source:
 
 Kaledkowski D, Rucki P, Hallal M, Burkoff N, Nasinski M, Pagacz K, Zhao
 J (2026). *teal.transform: Functions for Extracting and Merging Data in
-the 'teal' Framework*. R package version 0.7.2,
+the 'teal' Framework*. R package version 0.7.2.9001,
 <https://pharmaverse.github.io/teal.transform/>.
 
 @Manual{,\
   title = {teal.transform: Functions for Extracting and Merging Data in the 'teal' Framework},\
   author = {Dawid Kaledkowski and Pawel Rucki and Mahmoud Hallal and Nikolas Burkoff and Maciej Nasinski and Konrad Pagacz and Junlue Zhao},\
   year = {2026},\
-  note = {R package version 0.7.2},\
+  note = {R package version 0.7.2.9001},\
   url = {https://pharmaverse.github.io/teal.transform/},\
 }
