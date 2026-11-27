@@ -169,7 +169,7 @@ choices_selected <- function(choices,
   checkmate::assert_subset(selected, choices)
 
   if (!keep_order && length(choices) > 0) {
-    choices_in_selected <- which(choices %in% selected)
+    choices_in_selected <- match(selected, choices)
     choices <- vector_reorder(
       choices,
       c(choices_in_selected, setdiff(seq_along(choices), choices_in_selected))

@@ -214,3 +214,48 @@ testthat::test_that("no_selected_as_NULL returns NULL only if word is NULL or eq
   testthat::expect_null(no_selected_as_NULL(no_select_keyword))
   testthat::expect_failure(testthat::expect_null(no_selected_as_NULL("random")))
 })
+
+testthat::test_that("choices_selected preserves order of selected when keep_order is FALSE", {
+  cs <- choices_selected(
+    choices = c("A", "B", "C", "D"),
+    selected = c("D", "B"),
+    keep_order = FALSE
+  )
+  testthat::expect_identical(cs$choices, c("D", "B", "A", "C"))
+  testthat::expect_identical(cs$selected, c("D", "B"))
+
+  cs_keep <- choices_selected(
+    choices = c("A", "B", "C", "D"),
+    selected = c("D", "B"),
+    keep_order = TRUE
+  )
+  testthat::expect_identical(cs_keep$choices, c("A", "B", "C", "D"))
+  testthat::expect_identical(cs_keep$selected, c("D", "B"))
+
+  labeled <- choices_labeled(
+    choices = c("A", "B", "C", "D"),
+    labels = c("Label A", "Label B", "Label C", "Label D")
+  )
+  cs_labeled <- choices_selected(choices = labeled, selected = c("D", "B"), keep_order = FALSE)
+  testthat::expect_identical(as.character(cs_labeled$choices), c("D", "B", "A", "C"))
+  testthat::expect_identical(
+    attr(cs_labeled$choices, "raw_labels"),
+    c("Label D", "Label B", "Label A", "Label C")
+  )
+  testthat::expect_identical(
+    attr(cs_labeled$choices, "combined_labels"),
+    c("D: Label D", "B: Label B", "A: Label A", "C: Label C")
+  )
+
+  # delayed_choices_selected
+  df <- data.frame(A = 1, B = 2, C = 3, D = 4)
+  data_list <- list(DF = reactive(df))
+  delayed_cs <- choices_selected(
+    choices = variable_choices("DF"),
+    selected = c("D", "B"),
+    keep_order = FALSE
+  )
+  resolved_cs <- isolate(resolve_delayed(delayed_cs, datasets = data_list))
+  testthat::expect_identical(as.character(resolved_cs$choices), c("D", "B", "A", "C"))
+  testthat::expect_identical(resolved_cs$selected, c("D", "B"))
+})
